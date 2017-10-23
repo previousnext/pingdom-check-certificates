@@ -1,0 +1,28 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: pingdom-check-certificates
+  namespace: kube-system
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: pingdom-check-certificates
+    spec:
+      containers:
+      - name: pingdom-check-certificates
+        image: previousnext/pingdom-check-certificates:v0.0.1
+        env:
+        - name:  SLACK_CHANNEL_READY
+          value: ""
+        - name:  SLACK_CHANNEL_NOT_READY
+          value: ""
+        - name:  SLACK_TOKEN
+          value: ""
+        - name:  PINGDOM_USER
+          value: ""
+        - name:  PINGDOM_PASS
+          value: ""
+        - name:  PINGDOM_TOKEN
+          value: ""

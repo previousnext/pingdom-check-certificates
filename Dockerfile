@@ -5,5 +5,5 @@ RUN make build
 
 FROM alpine:latest
 RUN apk --no-cache add ca-certificates
-COPY --from=0 /go/bin/CHANGE_ME_linux_amd64 /usr/local/bin/CHANGE_ME
-CMD ["CHANGE_ME"]
+COPY --from=0 /go/bin/pingdom-check-certificate_linux_amd64 /usr/local/bin/pingdom-check-certificate
+CMD ["pingdom-check-certificate"]
