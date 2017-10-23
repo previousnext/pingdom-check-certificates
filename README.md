@@ -1,7 +1,7 @@
 Pingdom: Check Certificate
 ==========================
 
-[![CircleCI](https://circleci.com/gh/previousnext/pingdom-check-certificate.svg)](https://circleci.com/gh/previousnext/pingdom-check-certificate)
+[![CircleCI](https://circleci.com/gh/previousnext/pingdom-check-certificates.svg)](https://circleci.com/gh/previousnext/pingdom-check-certificates)
 
 **Maintainer**: Nick Schuch
 
