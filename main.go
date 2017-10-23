@@ -50,7 +50,7 @@ func main() {
 		}
 
 		if timeout > *cliDays {
-			_, _, err = api.PostMessage(*cliSlackNotReady, fmt.Sprintf("Certificate is not about to expire: *%s* (*%d*)", check.Hostname, timeout), params)
+			_, _, err = api.PostMessage(*cliSlackNotReady, fmt.Sprintf("Certificate is not about to expire: *%s* (*%d days*)", check.Hostname, timeout), params)
 			if err != nil {
 				panic(err)
 			}
@@ -58,7 +58,7 @@ func main() {
 			continue
 		}
 
-		_, _, err = api.PostMessage(*cliSlackReady, fmt.Sprintf("Certificate is about to expire: *%s* (*%d*)", check.Hostname, timeout), params)
+		_, _, err = api.PostMessage(*cliSlackReady, fmt.Sprintf("Certificate is about to expire: *%s* (*%d  days*)", check.Hostname, timeout), params)
 		if err != nil {
 			panic(err)
 		}

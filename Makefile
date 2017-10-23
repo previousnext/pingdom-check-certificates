@@ -1,10 +1,12 @@
 #!/usr/bin/make -f
 
-PROJECT=github.com/previousnext/pingdom-check-certificate
+export CGO_ENABLED=0
+
+PROJECT=github.com/previousnext/pingdom-check-certificates
 
 # Builds the project
 build:
-	gox -os='linux' -arch='amd64' -output='bin/pingdom-check-certificate_{{.OS}}_{{.Arch}}' -ldflags='-extldflags "-static"' $(PROJECT)
+	gox -os='linux' -arch='amd64' -output='bin/pingdom-check-certificates_{{.OS}}_{{.Arch}}' -ldflags='-extldflags "-static"' $(PROJECT)
 
 # Run all lint checking with exit codes for CI
 lint:
@@ -14,7 +16,7 @@ lint:
 test:
 	go test -cover main.go
 
-IMAGE=previousnext/pingdom-check-certificate
+IMAGE=previousnext/pingdom-check-certificates
 VERSION=$(shell git describe --tags --always)
 
 # Releases the project Docker Hub
